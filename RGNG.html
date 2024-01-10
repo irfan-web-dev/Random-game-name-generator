@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Game Names Generator</title>
+  </head>
+  <style>
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .wrapper {
+      padding: 20px;
+      background-color: #eee;
+      width: 300px;
+      height: 150px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .wrapper button {
+      padding: 7px;
+      margin-top: 20px;
+      border: 1px solid rgb(3, 99, 96);
+      border-radius: 6px;
+      cursor: pointer;
+      font-style: oblique;
+      font-weight: 600;
+      color: rgb(3, 61, 59);
+    }
+    .wrapper button:hover {
+      color: rgb(2, 74, 72);
+      background-color: rgb(90, 196, 187);
+      outline: 1px solid rgb(4, 177, 171);
+    }
+  </style>
+
+  <body>
+    <main class="main">
+      <div class="wrapper">
+        <div>
+          <h3 id="gameNames"></h3>
+          <button id="generate">Generate</button>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <script>
+    let gameName = document.getElementById("gameNames");
+    const generate = document.getElementById("generate");
+    const names = [
+      "Pubg",
+      "GTA-V",
+      "Subway Sufers",
+      "Forza Horizon V",
+      "League of Legends",
+      "Far Cry 6",
+      "Call of Duty: Black Ops IIII",
+      "Red Dead Redemption II",
+      "Call of Duty: Warzone (Modern Warfare)",
+    ];
+
+    generate.addEventListener("click", function () {
+      const computer = names[Math.floor(Math.random() * names.length)];
+      gameName.innerText = computer;
+    });
+  </script>
+</html>
